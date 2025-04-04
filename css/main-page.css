@@ -1,0 +1,417 @@
+:root {
+    --main-purple: #2A0944;
+    --neon-cyan: #00FFD1;
+    --electric-pink: #FF10F0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: var(--main-purple);
+    color: white;
+    overflow-x: hidden;
+}
+
+.glow-nav {
+    background: linear-gradient(rgba(0,0,0,0.1), rgba (0,0,0,0));
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--neon-cyan), var(--electric-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(0,255,209,0.5);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-cyan);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.container {
+    width: auto;
+    position: relative;
+    height: 100vh;
+    padding: 0 4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filler-1 {
+    font-size: 60px;
+    font-family: "Chivo Mono";
+    font-weight: bold;
+    margin-bottom: -50px;
+    background: linear-gradient(45deg, #ffffff, #ab3faf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(206, 255, 246, 0.199);
+}
+
+.filler-2 {
+    transform: translateX(-50px) translateY(30px);
+    font-family: "Noto Sans Canadian Aboriginal";
+    font-style: italic;
+    color: #c66bc9;
+    text-shadow: 0 0 30px rgba(206, 255, 246, 0.582);
+}
+
+.container-2 {
+    font-size: 145px;
+    font-family: "Chivo Mono";
+    font-weight: bolder;
+    word-spacing: -50px;
+    background: linear-gradient(45deg, #ffffff, #ab3faf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(206, 255, 246, 0.199);
+}
+
+.container-3 {
+    flex-direction: column;
+    align-items: flex-end;
+    display: flex;
+    transform: translateY(190px) translateX(-10px);
+    justify-content: flex-end;
+}
+
+.my-social-media {
+    transform: translateX(-60px) translateY(-15px);
+    font-family: "Noto Sans Canadian Aboriginal";
+    font-style: italic;
+    color: #ffffff;
+    text-shadow: 0 0 30px rgba(206, 255, 246, 0.582);
+}
+
+.bg-cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.bg-cover img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+/* Animasi */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    
+    .hero {
+        flex-direction: column;
+        padding-top: 100px;
+    }
+
+    .hero-visual {
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+    
+    .profile-container {
+        width: 300px;
+        height: 400px;
+    }
+    
+    .floating-text {
+        font-size: 20vw;
+    }
+}
+
+.cta-button {
+    padding: 1.2rem 3rem;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 25px rgba(255,16,240,0.4);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255,16,240,0.6);
+}
+
+.cyber-text-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cyber-glitch {
+    font-size: 5rem;
+    background: linear-gradient(45deg, 
+        var(--neon-cyan), 
+        var(--electric-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0,255,209,0.4);
+    position: relative;
+    margin-bottom: 3rem;
+    animation: glitch 2s infinite;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 5rem 5%;
+}
+
+.service-card {
+    background: rgba(255,255,255,0.05);
+    padding: 2.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0,255,209,0.2);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(0,255,209,0.2);
+}
+
+.service-title {
+    color: var(--neon-cyan);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-section {
+    padding: 8rem 5%;
+    background: linear-gradient(45deg, 
+        rgba(42, 9, 68, 0.9), 
+        rgba(0, 0, 0, 0.95));
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    font-size: 2.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-icon:hover {
+    color: var(--electric-pink);
+    transform: translateY(-5px);
+    text-shadow: 0 0 15px rgba(255,16,240,0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cyber-glitch {
+        font-size: 3rem;
+    }
+
+    .social-icon {
+        font-size: 2rem;
+    }
+}
+
+.fade-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.fade-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-scroll.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+/* CSS */
+.slide1 {
+    position: relative;
+    width: 1024px;
+    height: 768px;
+    margin: 3rem auto;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(42, 9, 68, 0.4), 
+        rgba(255,16,240,0.2));
+    z-index: 2;
+    mix-blend-mode: multiply;
+}
+
+.slide1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transform: rotateX(5deg) rotateY(-5deg) translateZ(0);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 15px 35px rgba(0,255,209,0.2),
+        0 0 50px rgba(255,16,240,0.3) inset;
+    filter: saturate(1.1) contrast(1.05);
+}
+
+.slide1:hover {
+    transform: translateY(-10px);
+}
+
+.slide1:hover img {
+    transform: rotateX(0) rotateY(0) translateZ(30px) scale(1.05);
+    box-shadow: 
+        0 25px 50px rgba(0,255,209,0.4),
+        0 0 80px rgba(255,16,240,0.5) inset;
+    filter: saturate(1.3) contrast(1.1);
+}
+
+/* Efek kilap saat hover */
+.slide1::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        rgba(0,255,209,0.1) 0%, 
+        rgba(255,16,240,0.1) 50%, 
+        rgba(0,255,209,0.1) 100%);
+    transform: rotate(45deg) translateZ(-100px);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.slide1:hover::after {
+    opacity: 0.6;
+    animation: shine 1.5s ease forwards;
+}
+
+@keyframes shine {
+    0% { transform: rotate(45deg) translateX(-100%); }
+    100% { transform: rotate(45deg) translateX(100%); }
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .slide1 {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 4/3;
+        perspective: 1000px;
+    }
+    
+    .slide1 img {
+        transform: rotateX(3deg) rotateY(-3deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .slide1 {
+        width: 100%;
+        border-radius: 0;
+    }
+    
+    .slide1:hover img {
+        transform: translateZ(10px) scale(1.02);
+    }
+}
